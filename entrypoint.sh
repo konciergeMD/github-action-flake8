@@ -1,4 +1,5 @@
 #!/bin/sh
+FLAKE8_CODE_DIR="${FLAKE8_CODE_DIR:-.}"  # check "." directory by default
 set -e
 
 if [ -z "$GITHUB_TOKEN" ]; then
@@ -9,12 +10,8 @@ fi
 cd "$GITHUB_WORKSPACE"
 
 set +e
-if [ -f "${FLAKE8_CONFIG}" ]; then
-    OUTPUT=$(flake8 . --config="$FLAKE8_CONFIG" $FLAKE8_OPTS)
-else
-    echo "Warning: $FLAKE8_CONFIG not found"
-    OUTPUT=$(flake8 . $FLAKE8_OPTS)
-fi
+echo "Executing \"flake8 $FLAKE8_CODE_DIR $FLAKE8_OPTS\""
+OUTPUT=$(flake8 $FLAKE8_CODE_DIR $FLAKE8_OPTS)
 SUCCESS=$?
 echo "$OUTPUT"
 set -e

@@ -1,13 +1,13 @@
 FROM python:3.8-alpine
 
 
-LABEL name="flake8-github-action"
+LABEL name="github-action-flake8"
 LABEL version="1.0.0"
-LABEL repository="http://github.com/konciergeMD/flake8-github-action"
-LABEL homepage="http://github.com/konciergeMD/flake8-github-action"
+LABEL repository="http://github.com/konciergeMD/github-action-flake8"
+LABEL homepage="http://github.com/konciergeMD/github-action-flake8"
 
 LABEL maintainer="Toga <toga@accolade.com>"
-LABEL com.github.actions.name="flake8-github-action"
+LABEL com.github.actions.name="github-action-flake8"
 LABEL com.github.actions.description="Run flake8 Check on a GitHub pull request"
 LABEL com.github.actions.icon="git-pull-request"
 LABEL com.github.actions.color="blue"
