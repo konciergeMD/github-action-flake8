@@ -24,6 +24,12 @@ jobs:
 * `PRECOMMAND_MESSAGE` - if you set it, it will print before
 the code errors. For example, this is helpful if you want to print a message to refer the user
 to any tools you have for managing style errors.
-* `FLAKE8_CONFIG` - path to the [flake8](https://flake8.pycqa.org/en/latest/user/configuration.html) compatible configuration file. Flake8 uses `.flake8` config by default
+* `FLAKE8_CONFIG` - path to the [flake8](https://flake8.pycqa.org/en/latest/user/configuration.html) compatible configuration file. Flake8 uses `.flake8` in
+  the root of your repository by default, good start is to use:
+```
+[flake8]
+ignore = E501,W503
+exclude = .git,__pycache__
+```
 * `FLAKE8_OPTS` - in case you don't want to use the `flake8` configuration file, use this variable to set additional `flake8` options, like `--verbose`, etc.
 
