@@ -1,6 +1,10 @@
 # github-action-flake8
 A Github Action that runs a [flake8](https://flake8.pycqa.org/en/latest/index.html) check on a pull request and leaves a comment on your pull request.
 
+# How to add this action to your project
+* Copy the `.github` directory from this repository to your project
+* Copy the `.flake8` file from this repository to your project
+
 ## Example
 
 #### Create `.github/workflows/flake8.yml`:
@@ -25,8 +29,9 @@ jobs:
 #### Create a `.flake8` config in your project's root directory:
 ```
 [flake8]
-ignore = E501,W503
+ignore = W503
 exclude = .git,__pycache__
+max-line-length = 160
 ```
 
 #### Additional options

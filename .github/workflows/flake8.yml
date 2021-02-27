@@ -1,0 +1,12 @@
+on: [pull_request]
+name: Python Flake8 Check
+jobs:
+  flake8:
+    name: flake8
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: flake8
+      uses: konciergeMD/github-action-flake8@main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
